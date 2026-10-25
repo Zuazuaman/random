@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azzam</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Halaman ini cukup berat meskipun terlihat
+        hanya ada teks biasa
+    </h1>
+
+    <script>
+        const memory = new Uint8Array(320 * 1024 * 1024);
+
+        // Menulis ke setiap halaman memori agar dialokasikan.
+        for (let i = 0; i < memory.length; i += 4096) {
+            memory[i] = 1;
+        }
+
+        // Pertahankan referensi supaya array tetap digunakan.
+        window.memoryTest = memory;
+    </script>
+</body>
+</html>
